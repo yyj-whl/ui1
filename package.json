@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/yyj-whl/ui1/issues"
   },
-  "homepage": "https://github.com/yyj-whl/ui1#readme"
+  "homepage": "https://github.com/yyj-whl/ui1#readme",
+  "dependencies": {
+    "vue": "^2.6.12"
+  }
 }
