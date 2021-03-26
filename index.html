@@ -15,14 +15,23 @@
             --button-background:#fff;
             --button-border-color:#999;
         }
-        
+        .icon{
+            width: 1em;
+            height: 1em;
+        }
     </style>
 </head>
 <body>
     <div id='app'>
         <!-- 单文件组件 -->
-        <lj-button></lj-button>
+        <lj-button>
+            <svg class="icon">
+                <use xlink:href='#i-settings'></use>
+            </svg>
+            按钮
+        </lj-button>
     </div>
     <script src="./src/app.js"></script>
+    <script src="//at.alicdn.com/t/font_2447591_40estcjnebm.js"></script>
 </body>
 </html>

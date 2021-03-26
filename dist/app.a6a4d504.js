@@ -12439,8 +12439,19 @@ exports.default = void 0;
 //
 //
 //
+//
+//
+//
+//
+//
 var _default = {
-  name: 'lj-button'
+  name: 'lj-button',
+  props: {
+    icons: {
+      type: String,
+      default: ''
+    }
+  }
 };
 exports.default = _default;
         var $f1a791 = exports.default || module.exports;
@@ -12455,18 +12466,22 @@ exports.default = _default;
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", [
+    _c(
+      "button",
+      { staticClass: "lj-button" },
+      [
+        _c("svg", { staticClass: "icon" }, [
+          _c("use", { attrs: { "xlink:href": "#i-settings" } })
+        ]),
+        _vm._v(" "),
+        _vm._t("default")
+      ],
+      2
+    )
+  ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("button", { staticClass: "lj-button" }, [_vm._v("你好")])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
           return {
@@ -12541,7 +12556,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51304" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51672" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

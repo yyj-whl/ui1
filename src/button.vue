@@ -1,11 +1,22 @@
 <template>
     <div>
-        <button class='lj-button'>你好</button>
+        <button class='lj-button'>
+            <svg class="icon">
+                <use xlink:href='#i-settings'></use>
+            </svg>
+            <slot></slot>
+        </button>
     </div>
 </template>
 <script>
 export default {
-    name:'lj-button'
+    name:'lj-button',
+    props:{
+        icons:{
+            type:String,
+            default:''
+        }
+    }
 }
 </script>
 <style lang="scss">
