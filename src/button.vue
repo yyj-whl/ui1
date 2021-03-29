@@ -1,7 +1,7 @@
 <template>
-    <button class='lj-button' :class="{[`icons-${iconPosition}`]:true}">
-        <lj-icon class='loading' name='loading'></lj-icon>
-        <lj-icon :name='icons' v-if="icons"></lj-icon>
+    <button class='lj-button' :class="{[`icons-${iconPosition}`]:true}" @click="$emit('click')">
+        <lj-icon class='loading' name='loading' v-if="loading"></lj-icon>
+        <lj-icon :name='icons' v-if="icons&&!loading"></lj-icon>
         <!-- <svg class="icon" v-if="icons">
             <use :xlink:href='`#i-${icons}`'></use>
         </svg> -->
@@ -15,6 +15,10 @@ export default {
         icons:{
             type:String,
             default:''
+        },
+        loading:{
+            type:Boolean,
+            default:false
         },
         iconPosition:{
             type:String,
