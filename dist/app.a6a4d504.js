@@ -12443,6 +12443,7 @@ exports.default = void 0;
 //
 //
 //
+//
 var _default = {
   name: 'lj-button',
   props: {
@@ -12485,6 +12486,8 @@ exports.default = _default;
       class: ((_obj = {}), (_obj["icons-" + _vm.iconPosition] = true), _obj)
     },
     [
+      _c("lj-icon", { staticClass: "loading", attrs: { name: "loading" } }),
+      _vm._v(" "),
       _vm.icons ? _c("lj-icon", { attrs: { name: _vm.icons } }) : _vm._e(),
       _vm._v(" "),
       _vm._t("default")

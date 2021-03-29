@@ -1,5 +1,6 @@
 <template>
     <button class='lj-button' :class="{[`icons-${iconPosition}`]:true}">
+        <lj-icon class='loading' name='loading'></lj-icon>
         <lj-icon :name='icons' v-if="icons"></lj-icon>
         <!-- <svg class="icon" v-if="icons">
             <use :xlink:href='`#i-${icons}`'></use>
@@ -31,6 +32,10 @@ export default {
 }
 </script>
 <style lang="scss">
+    @keyframes spin {
+        0%{transform: rotate(0deg)}
+        100%{transform: rotate(360deg);}
+    }
     .lj-button{
         font-size: var(--font-size);
         height: var(--button-height);
@@ -50,6 +55,9 @@ export default {
                 margin-left: .3em;
                 margin-right: 0;
             }
+        }
+        .loading{
+            animation: spin 2s infinite linear;
         }
     }
 </style>
