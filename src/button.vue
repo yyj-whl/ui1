@@ -1,12 +1,11 @@
 <template>
-    <div>
-        <button class='lj-button'>
-            <svg class="icon">
-                <use xlink:href='#i-settings'></use>
-            </svg>
-            <slot></slot>
-        </button>
-    </div>
+    <button class='lj-button' :class="{[`icons-${iconPosition}`]:true}">
+        <lj-icon :name='icons' v-if="icons"></lj-icon>
+        <!-- <svg class="icon" v-if="icons">
+            <use :xlink:href='`#i-${icons}`'></use>
+        </svg> -->
+        <slot></slot>
+    </button>
 </template>
 <script>
 export default {
@@ -15,6 +14,18 @@ export default {
         icons:{
             type:String,
             default:''
+        },
+        iconPosition:{
+            type:String,
+            default:'left',
+            validator:(val)=>{
+                // if(val!=='left'&&val!=='right'){
+                //     return false
+                // }else{
+                //     return true
+                // }
+                return !(val!=='left'&&val!=='right')
+            }
         }
     }
 }
@@ -26,5 +37,19 @@ export default {
         background: var(--button-background);
         padding:0 1em;
         border: 1px solid var(--button-border-color);
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        vertical-align: middle;
+        .icon{
+            margin-right: .3em;
+        }
+        &.icons-right{
+            .icon{
+                order: 2;
+                margin-left: .3em;
+                margin-right: 0;
+            }
+        }
     }
 </style>
