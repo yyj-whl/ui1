@@ -13,6 +13,8 @@ new Vue({
 })
 //单元测试
 import chai from 'chai'
+import chaispies from 'chai-spies'
+chai.use(chaispies)
 const expect = chai.expect
 {
     
@@ -89,9 +91,12 @@ const expect = chai.expect
         }
     })
     button.$mount(div) 
-    button.$on('click',function(){
+    let spy=chai.spy(function(){
         console.log(454545)
     })
+    button.$on('click',spy)
+
     let btn_click=button.$el
     btn_click.click()
+    expect(spy).to.have.been.called();
 }
