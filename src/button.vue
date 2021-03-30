@@ -51,7 +51,7 @@ export default {
         align-items: center;
         vertical-align: middle;
         .icon{
-            margin-right: .3em;
+            margin-right: .3em;order: 1;
         }
         &.icons-right{
             .icon{

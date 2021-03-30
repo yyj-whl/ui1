@@ -19,6 +19,7 @@
 }
 .lj-button .icon {
   margin-right: 0.3em;
+  order: 1;
 }
 .lj-button.icons-right .icon {
   order: 2;
