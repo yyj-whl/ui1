@@ -12,91 +12,92 @@ new Vue({
     }
 })
 //单元测试
-import chai from 'chai'
-import chaispies from 'chai-spies'
-chai.use(chaispies)
-const expect = chai.expect
-{
+// import chai from 'chai'
+// import chaispies from 'chai-spies'
+// chai.use(chaispies)
+// const expect = chai.expect
+// {
     
-    let constructor = Vue.extend(ljButton)
-    console.log(constructor)
-    let button = new constructor({
-        propsData:{
-            icons:'settings'
-        }
-    })
-    button.$mount()
-    let useElement = button.$el.querySelector('use')
-    console.log(useElement)
-    expect(useElement.getAttribute('xlink:href')).eq('#i-settings')
-}
-{
-    let constructor = Vue.extend(ljButton)
-    console.log(constructor)
-    let button = new constructor({
-        propsData:{
-            icons:'settings',
-            loading:true
-        }
-    })
-    button.$mount() 
-    let useElement = button.$el.querySelector('use')
-    console.log(useElement)
-    expect(useElement.getAttribute('xlink:href')).eq('#i-loading')  
-}
-{
+//     let constructor = Vue.extend(ljButton)
+//     console.log(constructor)
+//     let button = new constructor({
+//         propsData:{
+//             icons:'settings'
+//         }
+//     })
+//     button.$mount()
+//     let useElement = button.$el.querySelector('use')
+//     console.log(useElement)
+//     expect(useElement.getAttribute('xlink:href')).eq('#i-settings')
+// }
+// {
+//     let constructor = Vue.extend(ljButton)
+//     console.log(constructor)
+//     let button = new constructor({
+//         propsData:{
+//             icons:'settings',
+//             loading:true
+//         }
+//     })
+//     button.$mount() 
+//     let useElement = button.$el.querySelector('use')
+//     console.log(useElement)
+//     expect(useElement.getAttribute('xlink:href')).eq('#i-loading')  
+// }
+// {
 
-    let constructor = Vue.extend(ljButton)
-    console.log(constructor)
-    let button = new constructor({
-        propsData:{
-            icons:'settings'
-        }
-    })
-    button.$mount('#test') 
-    let svg = button.$el.querySelector('svg')
-    let {order} = window.getComputedStyle(svg)
-    expect(order).eq('1')
-    button.$el.remove()  
-    button.$destroy()
-}
-{
-    let div = document.createElement('div')
-    document.body.appendChild(div)
-    let constructor = Vue.extend(ljButton)
-    console.log(constructor)
-    let button = new constructor({
-        propsData:{
-            icons:'settings',
-            iconPosition:'right'
-        }
-    })
-    button.$mount(div) 
-    let svg = button.$el.querySelector('svg')
-    let {order} = window.getComputedStyle(svg)
-    expect(order).eq('2')
-    button.$el.remove()  
-    button.$destroy() 
-}
-//mock
-{
-    let div = document.createElement('div')
-    document.body.appendChild(div)
-    let constructor = Vue.extend(ljButton)
-    console.log(constructor)
-    let button = new constructor({
-        propsData:{
-            icons:'settings',
-            iconPosition:'right'
-        }
-    })
-    button.$mount(div) 
-    let spy=chai.spy(function(){
-        console.log(454545)
-    })
-    button.$on('click',spy)
+//     let constructor = Vue.extend(ljButton)
+//     console.log(constructor)
+//     let button = new constructor({
+//         propsData:{
+//             icons:'settings'
+//         }
+//     })
+//     button.$mount('#test') 
+//     let svg = button.$el.querySelector('svg')
+//     let {order} = window.getComputedStyle(svg)
+//     expect(order).eq('1')
+//     button.$el.remove()  
+//     button.$destroy()
+// }
+// {
+//     let div = document.createElement('div')
+//     document.body.appendChild(div)
+//     let constructor = Vue.extend(ljButton)
+//     console.log(constructor)
+//     let button = new constructor({
+//         propsData:{
+//             icons:'settings',
+//             iconPosition:'right'
+//         }
+//     })
+//     button.$mount(div) 
+//     let svg = button.$el.querySelector('svg')
+//     let {order} = window.getComputedStyle(svg)
+//     expect(order).eq('2')
+//     button.$el.remove()  
+//     button.$destroy() 
+// }
+// //mock
+// {
+//     let div = document.createElement('div')
+//     document.body.appendChild(div)
+//     let constructor = Vue.extend(ljButton)
+//     console.log(constructor)
+//     let button = new constructor({
+//         propsData:{
+//             icons:'settings',
+//             iconPosition:'right'
+//         }
+//     })
+//     button.$mount(div) 
+//     let spy=chai.spy(function(){
+//         console.log(454545)
+//     })
+//     button.$on('click',spy)
 
-    let btn_click=button.$el
-    btn_click.click()
-    expect(spy).to.have.been.called();
-}
+//     let btn_click=button.$el
+//     btn_click.click()
+//     expect(spy).to.have.been.called();
+// }
+//自动化测试

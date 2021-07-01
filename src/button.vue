@@ -9,8 +9,12 @@
     </button>
 </template>
 <script>
+import Icon from './icon'
 export default {
     name:'lj-button',
+    components:{
+        'lj-icon':Icon
+    },
     props:{
         icons:{
             type:String,
