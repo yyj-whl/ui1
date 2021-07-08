@@ -28,11 +28,6 @@ export default {
             type:String,
             default:'left',
             validator:(val)=>{
-                // if(val!=='left'&&val!=='right'){
-                //     return false
-                // }else{
-                //     return true
-                // }
                 return !(val!=='left'&&val!=='right')
             }
         }
